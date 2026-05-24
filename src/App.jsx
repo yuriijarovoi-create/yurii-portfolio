@@ -187,7 +187,7 @@ function App() {
                 Projekte ansehen
               </button>
               <a
-                href="/lebenslauf.pdf"
+                href="/yurii-portfolio/lebenslauf.pdf"
                 className="btn btn--outline"
                 target="_blank"
                 rel="noopener noreferrer"
