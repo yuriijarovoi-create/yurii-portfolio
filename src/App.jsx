@@ -96,6 +96,7 @@ function useScrollReveal() {
 }
 
 function App() {
+  const [copied, setCopied] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -324,9 +325,18 @@ function App() {
                       →
                     </span>
                   </a>
-                  <a href={`mailto:${EMAIL}`} className="btn btn--primary">
-                    E-Mail senden
-                  </a>
+                  <button
+                  className="btn btn--primary"
+                  onClick={() => {
+                   navigator.clipboard.writeText(EMAIL);
+                   setCopied(true);
+                   setTimeout(() => {
+                     setCopied(false);
+                     }, 2000);
+                    }}
+                   >
+                      {copied ? "Kopiert!" : "E-Mail kopieren"}
+                  </button>
                 </div>
               </div>
             </div>
